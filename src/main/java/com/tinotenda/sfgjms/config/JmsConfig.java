@@ -2,12 +2,16 @@ package com.tinotenda.sfgjms.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.support.converter.MappingJackson2MessageConverter;
 import org.springframework.jms.support.converter.MessageConverter;
 import org.springframework.jms.support.converter.MessageType;
 
 @Configuration
+@EnableJms
 public class JmsConfig {
+
+    public static final String MY_QUEUE = "my-hello-queue";
 
     @Bean
     public MessageConverter messageConverter() {
